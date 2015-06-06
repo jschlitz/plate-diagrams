@@ -36,6 +36,7 @@ nav {
   align-items:flex-start;
   align-content: space-around;
   padding: 3px;
+  margin-right: 10px;
 }
 
 
@@ -66,8 +67,8 @@ nav {
 	border-top: 40px solid transparent;
 	border-left: 100px solid gray;
 	border-bottom: 40px solid transparent;
+  margin: 20px;
 }
-
 
 .plate {
   flex: 0 0 1;
@@ -93,69 +94,82 @@ nav {
   flex: 0 0 23px;
   border-radius: 23px;
   background-color: #eeeeee;
+  margin: 1px;
 }
 
-
-.navitem {
-  color: #4C191B;
-  background-color: #DBD8AE;
-  margin: 3px;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1 1 100px;
-  font-size: 2em;
-  font-weight: bold;
+.plate2 {
+  flex: 0 0 1;
+  margin: 10;
+  display:  flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items:stretch;
+  align-content: space-around;
+  border: 2px solid #666666 ;
+  border-radius: 6px;
+  background-color: #dddddd;
+  padding: 3px;
 }
 
-.a-button:hover {
-  background-color: #88bbdd;
-  font-weight: bolder;
+.column {
+  flex: 0 0 1;
+  display:  flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items:flex-start;
+  align-content: space-around;
+  background-color: #dddddd;
 }
 
-.square {
-  width: 100px;
-  height: 100px;
-}
-
-.wide {
-  width: 200px;
-  height: 100px;
-}
-
-.tall {
-  width: 100px;
-  height: 400px;
+#main {
+  flex: 0 0 1;
+  display:  flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items:flex-start;
+  align-content: space-around;
+  background-color: #dddddd;
 }
 
 
 
 /*some distinct colors*/
-
-
-.ch { background-color: hsl(10, 50%, 75%);}
-.cw { background-color: hsl(20, 50%, 75%);}
-.cp { background-color: hsl(30, 50%, 75%);}
-.ca { background-color: hsl(50, 50%, 75%);}
-.ci { background-color: hsl(60, 50%, 75%);}
-.cq { background-color: hsl(80, 50%, 75%);}
-.cb { background-color: hsl(100, 50%, 75%);}
-.cj { background-color: hsl(110, 50%, 75%);}
-.cx { background-color: hsl(120, 50%, 75%);}
-.cr { background-color: hsl(130, 50%, 75%);}
-.cc { background-color: hsl(150, 50%, 75%);}
-.ck { background-color: hsl(160, 50%, 75%);}
-.cs { background-color: hsl(180, 50%, 75%);}
-.cd { background-color: hsl(200, 50%, 75%);}
-.cl { background-color: hsl(210, 50%, 75%);}
-.cy { background-color: hsl(220, 50%, 75%);}
-.ct { background-color: hsl(230, 50%, 75%);}
-.ce { background-color: hsl(250, 50%, 75%);}
-.cm { background-color: hsl(260, 50%, 75%);}
-.cu { background-color: hsl(280, 50%, 75%);}
-.cf { background-color: hsl(300, 50%, 75%);}
-.cn { background-color: hsl(310, 50%, 75%);}
-.cz { background-color: hsl(320, 50%, 75%);}
-.cv { background-color: hsl(330, 50%, 75%);}
-.cg { background-color: hsl(350, 50%, 75%);}
-.co { background-color: hsl(360, 50%, 75%);}
+.c1 { background-color: hsl(10, 50%, 75%);}
+.c2 { background-color: hsl(20, 50%, 75%);}
+.c3 { background-color: hsl(30, 50%, 75%);}
+.c4 { background-color: hsl(40, 50%, 75%);}
+.c5 { background-color: hsl(50, 50%, 75%);}
+.c6 { background-color: hsl(60, 50%, 75%);}
+.c7 { background-color: hsl(70, 50%, 75%);}
+.c8 { background-color: hsl(80, 50%, 75%);}
+.c9 { background-color: hsl(90, 50%, 75%);}
+.c10 { background-color: hsl(100, 50%, 75%);}
+.c11 { background-color: hsl(110, 50%, 75%);}
+.c12 { background-color: hsl(120, 50%, 75%);}
+.c13 { background-color: hsl(130, 50%, 75%);}
+.c14 { background-color: hsl(140, 50%, 75%);}
+.c15 { background-color: hsl(150, 50%, 75%);}
+.c16 { background-color: hsl(160, 50%, 75%);}
+.c17 { background-color: hsl(170, 50%, 75%);}
+.c18 { background-color: hsl(180, 50%, 75%);}
+.c19 { background-color: hsl(190, 50%, 75%);}
+.c20 { background-color: hsl(200, 50%, 75%);}
+.c21 { background-color: hsl(210, 50%, 75%);}
+.c22 { background-color: hsl(220, 50%, 75%);}
+.c23 { background-color: hsl(230, 50%, 75%);}
+.c24 { background-color: hsl(240, 50%, 75%);}
+.c25 { background-color: hsl(250, 50%, 75%);}
+.c26 { background-color: hsl(260, 50%, 75%);}
+.c27 { background-color: hsl(270, 50%, 75%);}
+.c28 { background-color: hsl(280, 50%, 75%);}
+.c29 { background-color: hsl(290, 50%, 75%);}
+.c30 { background-color: hsl(300, 50%, 75%);}
+.c31 { background-color: hsl(310, 50%, 75%);}
+.c32 { background-color: hsl(320, 50%, 75%);}
+.c33 { background-color: hsl(330, 50%, 75%);}
+.c34 { background-color: hsl(340, 50%, 75%);}
+.c35 { background-color: hsl(350, 50%, 75%);}
+.c0 { background-color: hsl(360, 50%, 75%);}

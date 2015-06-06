@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Bitter', serif;
+}
+
+nav {
+  width:  444px;
+  flex-direction: row;
+  display:  flex;
+  padding: 3px;
+  border: 1px solid #994636;
+  background-color: #EAF4D3;
+}
+
+
+
+.container {
+  display:  flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items:flex-start;
+  align-content: space-around;
+  padding: 3px;
+}
+
+.subcontainer {
+  display:  flex;
+  width: 320px;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items:flex-start;
+  align-content: space-around;
+  padding: 3px;
+}
+
+
+.source {
+  flex: 0 0 1;
+  width:  315px;
+  height: 215px;
+  display:  flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items:center;
+  align-content: space-around;
+  border: 2px solid #666666 ;
+  border-radius: 6px;
+  background-color: #ccddcc;
+  padding: 3px;
+  margin: 10;
+  font-size: 6em;
+  color: #666666;
+}
+
+.arrow {
+  flex: 0 0 1;
+	width: 0;
+  align-self: center;
+	height: 0;
+	border-top: 40px solid transparent;
+	border-left: 100px solid gray;
+	border-bottom: 40px solid transparent;
+}
+
+
+.plate {
+  flex: 0 0 1;
+  margin: 10;
+  width:  315px;
+  height: 215px;
+  display:  flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items:flex-start;
+  align-content: space-around;
+  border: 2px solid #666666 ;
+  border-radius: 6px;
+  background-color: #dddddd;
+  padding: 3px;
+}
+
+.well {
+  width:  23px;
+  height: 23px;
+  border: 1px solid #666666 ;
+  flex: 0 0 23px;
+  border-radius: 23px;
+  background-color: #eeeeee;
+}
+
+
+.navitem {
+  color: #4C191B;
+  background-color: #DBD8AE;
+  margin: 3px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 100px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.a-button:hover {
+  background-color: #88bbdd;
+  font-weight: bolder;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+}
+
+.wide {
+  width: 200px;
+  height: 100px;
+}
+
+.tall {
+  width: 100px;
+  height: 400px;
+}
+
+
+
+/*some distinct colors*/
+
+
+.ch { background-color: hsl(10, 50%, 75%);}
+.cw { background-color: hsl(20, 50%, 75%);}
+.cp { background-color: hsl(30, 50%, 75%);}
+.ca { background-color: hsl(50, 50%, 75%);}
+.ci { background-color: hsl(60, 50%, 75%);}
+.cq { background-color: hsl(80, 50%, 75%);}
+.cb { background-color: hsl(100, 50%, 75%);}
+.cj { background-color: hsl(110, 50%, 75%);}
+.cx { background-color: hsl(120, 50%, 75%);}
+.cr { background-color: hsl(130, 50%, 75%);}
+.cc { background-color: hsl(150, 50%, 75%);}
+.ck { background-color: hsl(160, 50%, 75%);}
+.cs { background-color: hsl(180, 50%, 75%);}
+.cd { background-color: hsl(200, 50%, 75%);}
+.cl { background-color: hsl(210, 50%, 75%);}
+.cy { background-color: hsl(220, 50%, 75%);}
+.ct { background-color: hsl(230, 50%, 75%);}
+.ce { background-color: hsl(250, 50%, 75%);}
+.cm { background-color: hsl(260, 50%, 75%);}
+.cu { background-color: hsl(280, 50%, 75%);}
+.cf { background-color: hsl(300, 50%, 75%);}
+.cn { background-color: hsl(310, 50%, 75%);}
+.cz { background-color: hsl(320, 50%, 75%);}
+.cv { background-color: hsl(330, 50%, 75%);}
+.cg { background-color: hsl(350, 50%, 75%);}
+.co { background-color: hsl(360, 50%, 75%);}

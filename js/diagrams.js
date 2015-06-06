@@ -23,9 +23,36 @@ $(document).ready(function(){
     return $('<div>').attr('class', 'arrow');
   };
 
-  var makeDestination = function (text, wells, startColor) {
+  var makeDestination = function (text, wellInfo, startColor) {
     var result = $('<div>').attr('class', 'subcontainer');
-    result.append($('<div>').attr('class', 'plate2'));
+    var dest = $('<div>').attr('class', 'plate2');
+
+    //the wells
+    var wells = [];
+
+    //fill it out to 96
+    for (var i = 0; i < 96; i++) {
+      wells.push($('<div>').attr('class', 'well'));
+    }
+
+    var wc = 0;
+    for (var i = 0; i < wellInfo.length; i++) {
+      for (var j = 0; j < wellInfo[i]; j++) {
+        wells[wc].addClass('c' + (i*5%36));
+        wc++;
+      }
+    }
+
+    //break out the columns
+    for (var i = 0; i < 12; i++) {
+      var col = $('<div>').attr('class', 'column');
+      col.append(wells.slice(i*8, (i+1)*8));
+      dest.append(col);
+    }
+
+    result.append(dest);
+
+    //finally, the text
     result.append($('<p>').text(text));
 
     return result;
@@ -34,9 +61,10 @@ $(document).ready(function(){
   var main = $("#main");
   main.empty();
 
-  main.append(makeDiagram([makeSource("Hello world", 96),
-    makeArrow(),
-    makeDestination("wibble wobble", [8,7,6,5,4,3,2,1], 0)]));
+  main.append(
+    makeDiagram([makeSource("Hello world", 96),
+      makeArrow(),
+      makeDestination("wibble wobble", [13, 12,11,10,9,8,7,6,5,4,3,2,1], 0)]));
 
 
 

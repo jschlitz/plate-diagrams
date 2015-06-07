@@ -25,7 +25,7 @@ h1,h2,h3,h4,h5,h6 {
   align-items:flex-start;
   align-content: space-around;
   padding: 3px;
-  margin: 20px;
+  margin-right: 10px;
 }
 
 
@@ -61,6 +61,7 @@ h1,h2,h3,h4,h5,h6 {
 	border-left: 50px solid gray;
 	border-bottom: 20px solid transparent;
   margin-bottom: 2em;
+  margin-right: 10px;
 }
 
 .well {

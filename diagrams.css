@@ -6,17 +6,6 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'Bitter', serif;
 }
 
-nav {
-  width:  444px;
-  flex-direction: row;
-  display:  flex;
-  padding: 3px;
-  border: 1px solid #994636;
-  background-color: #EAF4D3;
-}
-
-
-
 .container {
   display:  flex;
   flex-wrap: nowrap;
@@ -29,21 +18,21 @@ nav {
 
 .subcontainer {
   display:  flex;
-  width: 320px;
+  width: 200px;
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: space-around;
   align-items:flex-start;
   align-content: space-around;
   padding: 3px;
-  margin-right: 10px;
+  margin: 20px;
 }
 
 
 .source {
   flex: 0 0 1;
-  width:  315px;
-  height: 215px;
+  width:  180px;
+  height: 120px;
   display:  flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -54,8 +43,12 @@ nav {
   border-radius: 6px;
   background-color: #ccddcc;
   padding: 3px;
-  margin: 10;
-  font-size: 6em;
+  font-size: 3em;
+  color: #666666;
+}
+
+.big-text {
+  font-size: 3em;
   color: #666666;
 }
 
@@ -64,35 +57,18 @@ nav {
 	width: 0;
   align-self: center;
 	height: 0;
-	border-top: 40px solid transparent;
-	border-left: 100px solid gray;
-	border-bottom: 40px solid transparent;
-  margin: 20px;
-}
-
-.plate {
-  flex: 0 0 1;
-  margin: 10;
-  width:  315px;
-  height: 215px;
-  display:  flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items:flex-start;
-  align-content: space-around;
-  border: 2px solid #666666 ;
-  border-radius: 6px;
-  background-color: #dddddd;
-  padding: 3px;
+	border-top: 20px solid transparent;
+	border-left: 50px solid gray;
+	border-bottom: 20px solid transparent;
+  margin-bottom: 2em;
 }
 
 .well {
-  width:  23px;
-  height: 23px;
+  width:  12px;
+  height: 12px;
   border: 1px solid #666666 ;
-  flex: 0 0 23px;
-  border-radius: 23px;
+  flex: 0 0 12px;
+  border-radius: 12px;
   background-color: #eeeeee;
   margin: 1px;
 }

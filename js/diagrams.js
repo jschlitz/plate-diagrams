@@ -115,16 +115,16 @@ $(document).ready(function(){
   main.append($("<p>").html("Say <b>N</b> = 8, and we always have enough colonies to pick.\
     If we have 24 source plates, we'll completely fill up 2 destinations and leave the remaining colonies on our sources."));
   main.append(
-    makeDiagram([makeSource("24 sources plates", ">8"),
+    makeDiagram([makeSource("24 sources plates. Remainders left on source.", ">=8"),
       makeArrow(),
       makeTightDestination("1st", [8,8,8,8,8,8,8,8,8,8,8,8], 0),
       makeTightDestination("2nd", [8,8,8,8,8,8,8,8,8,8,8,8], 12)]));
   main.append($("<br>"));
 
   main.append($("<p>").html("There are 2 ways of approaching gaps. \
-    We can compact them, or leave them scattered throughout\
+    We can compact them, or more simply, leave them scattered throughout\
     Say <b>N</b> = 8, but we only have 7-8 colonies per source.\
-    If we will leave some gaps at then end of our plates."));
+    If we will leave some gaps at then end of our plates:"));
   main.append(
     makeDiagram([makeSource("24 sources plates", "7-8"),
       makeArrow(),
@@ -159,8 +159,8 @@ $(document).ready(function(){
 
   main.append($("<h2>").text("One to one & One to many"));
   main.append($("<p>").html("Now let's take the case where we have reasonably dense\
-    sources, and we want to create a set number of destination plates with as few gaps as we reasonably can."));
-  main.append($("<br>"));
+    sources, and we want to create a set number of destination plates with as few gaps as we reasonably can. \
+    One of the constraints that we would have to impose is to have a maximum number of destination plates per source plate."));
 
   main.append($("<p>").html("For our first example, let's say that we want to \
     make 5 destination plates, and we will leave any set of colonies less than 96 on the source plate."));
@@ -199,7 +199,7 @@ $(document).ready(function(){
       makeTightDestination("1st", [96], 2),
       makeTightDestination("2nd", [95], 2)]));
 
-  main.append($("<p>").html("Lee, with what you proposed, what happens with 176 colonies?"));
+  main.append($("<p>").html("Lee, with what you proposed, what happens with 176 colonies? I could see the boundary conditions getting messy."));
   main.append(
     makeDiagram([makeSource("80 colonies left behind", "176"),
       makeArrow(),
@@ -211,11 +211,12 @@ $(document).ready(function(){
       makeTightDestination("2nd", [88], 1)]));
 
   main.append($("<h2>").text("One to many with 2nd pass consolidation"));
-  main.append($("<p>").html("I should put in a note here about maximum number..."));
   main.append($("<p>").html("Finally, we have the case where we have a known number of source plates and want to harvest \
     as many colonies as possible with complete disregard for any gaps left on \
-    destination plates. Later we run a 2nd method to consolidate these wells. \
-    This will result in some wasted plastic, and may take some extra time. For example:"));
+    destination plates. Later we run a 2nd method to consolidate these wells using the Biomek. \
+    This will result in some wasted plates, and may take some extra time. \
+    Again, one of the constraints that we would have to impose is to have a maximum number of destination plates per source plate. \
+    For example:"));
 
   main.append(
     makeDiagram([makeSource("", "100"),
@@ -236,34 +237,4 @@ $(document).ready(function(){
 
   //$("#content").text("Hello World!")
 
-/*
-
-
- $("#about").on("click", function (e){
-    $("#content").empty();
-    $("#content").append($("<p>").text("foo"));
-    $("#content").append($("<br>"));
-    $("#content").append($("<p>").text(LOREM));
-  });
-
-  $("#home").on("click", function (e){
-    $("#content").empty();
-    $("#content").append($("<p>").text("Welcome home."));
-  });
-
-  $("#menu").on("click", function (e){
-    $("#content").empty();
-    var stuff = $("<div>");
-    var img = $("<img>");
-    img.attr("src", "foxhead.png");
-    stuff.append(img);
-    stuff.append($("<p>").text("buy this!"));
-
-    $("#content").append(stuff);
-    $("#content").append($("<br>"));
-    $("#content").append(stuff.clone());
-    $("#content").append($("<br>"));
-    $("#content").append(stuff.clone());
-  });
-*/
 });

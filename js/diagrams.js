@@ -110,7 +110,7 @@ $(document).ready(function(){
   main.append($("<p>").html("These workflows take a known maximum number of wells <b>N</b>\
     from a known number of source plates, and consolidate them into destination plates as best as it can.\
     The choice of <b>N</b> and the number of colonies that are actually on the source plates will have\
-    effects on the final layout that may not be immediatly obvious."));
+    effects on the final layout that may not be immediately  obvious."));
 
   main.append($("<p>").html("Say <b>N</b> = 8, and we always have enough colonies to pick.\
     If we have 24 source plates, we'll completely fill up 2 destinations and leave the remaining colonies on our sources."));
@@ -124,7 +124,7 @@ $(document).ready(function(){
   main.append($("<p>").html("There are 2 ways of approaching gaps. \
     We can compact them, or more simply, leave them scattered throughout\
     Say <b>N</b> = 8, but we only have 7-8 colonies per source.\
-    If we will leave some gaps at then end of our plates:"));
+    If we will leave some gaps at the end of our plates:"));
   main.append(
     makeDiagram([makeSource("24 sources plates", "7-8"),
       makeArrow(),
@@ -132,7 +132,7 @@ $(document).ready(function(){
       makeTightDestination("2nd", [8,8,8,8,7,7,8,8,8,8,8,7], 12)]));
 
   main.append($("<p>").html("Here we have the same situation, but leave gaps where we find them.\
-    This is simpler for SAMI to deal with, as it can be known at schedule-time."));
+    This is simpler for SAMI to deal with, as the well starting locations can be known at schedule-time."));
   main.append(
     makeDiagram([makeSource("24 sources plates", "7-8"),
       makeArrow(),
@@ -198,17 +198,6 @@ $(document).ready(function(){
       makeArrow(),
       makeTightDestination("1st", [96], 2),
       makeTightDestination("2nd", [95], 2)]));
-
-  main.append($("<p>").html("Lee, with what you proposed, what happens with 176 colonies? I could see the boundary conditions getting messy."));
-  main.append(
-    makeDiagram([makeSource("80 colonies left behind", "176"),
-      makeArrow(),
-      makeTightDestination("1st", [96], 0)]));
-  main.append(
-    makeDiagram([makeSource("0 colonies left behind", "176"),
-      makeArrow(),
-      makeTightDestination("1st", [88], 1),
-      makeTightDestination("2nd", [88], 1)]));
 
   main.append($("<h2>").text("One to many with 2nd pass consolidation"));
   main.append($("<p>").html("Finally, we have the case where we have a known number of source plates and want to harvest \

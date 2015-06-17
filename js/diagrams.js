@@ -121,18 +121,10 @@ $(document).ready(function(){
       makeTightDestination("2nd", [8,8,8,8,8,8,8,8,8,8,8,8], 12)]));
   main.append($("<br>"));
 
-  main.append($("<p>").html("There are 2 ways of approaching gaps. \
-    We can compact them, or more simply, leave them scattered throughout\
-    Say <b>N</b> = 8, but we only have 7-8 colonies per source.\
-    If we will leave some gaps at the end of our plates:"));
-  main.append(
-    makeDiagram([makeSource("24 sources plates", "7-8"),
-      makeArrow(),
-      makeTightDestination("1st", [8,7,8,8,8,8,7,8,8,8,8,8], 0),
-      makeTightDestination("2nd", [8,8,8,8,7,7,8,8,8,8,8,7], 12)]));
 
-  main.append($("<p>").html("Here we have the same situation, but leave gaps where we find them.\
-    This is simpler for SAMI to deal with, as the well starting locations can be known at schedule-time."));
+  main.append($("<p>").html("We will deal with gaps by leaving them as we find them. " +
+    "This is simpler for SAMI to deal with, as the well starting locations can be known at schedule-time." +
+    "For example, say <b>N</b> = 8, but we only have 7-8 colonies per source."));
   main.append(
     makeDiagram([makeSource("24 sources plates", "7-8"),
       makeArrow(),
@@ -141,15 +133,9 @@ $(document).ready(function(){
   main.append($("<br>"));
 
 
-  main.append($("<p>").html("Let's take a more extreme example. \
-    Say <b>N</b> = 8, but we only have 5 colonies to be picked on each plate.\
-    With our compacting approach, we would end up with something like this."));
-  main.append(
-    makeDiagram([makeSource("24 sources plates", "5"),
-      makeArrow(),
-      makeTightDestination("1st", [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5], 0),
-      makeTightDestination("2nd", [5,5,5,5,5,5], 18)]));
-  main.append($("<p>").html("And here we leave the gaps as they come."));
+  main.append($("<p>").html("Let's take a more extreme example. " +
+    "Say <b>N</b> = 8, but we only have 5 colonies to be picked on each plate." +
+    "We would end up with something like this."));
   main.append(
     makeDiagram([makeSource("24 sources plates", "5"),
       makeArrow(),
@@ -157,13 +143,18 @@ $(document).ready(function(){
       makeLooseDestination("2nd", 8, [5,5,5,5,5,5,5,5,5,5,5,5], 12)]));
   main.append($("<br>"));
 
-  main.append($("<h2>").text("One to one & One to many"));
-  main.append($("<p>").html("Now let's take the case where we have reasonably dense\
-    sources, and we want to create a set number of destination plates with as few gaps as we reasonably can. \
-    One of the constraints that we would have to impose is to have a maximum number of destination plates per source plate."));
+  //Page breaking when printing as pdf
+  main.append($("<br>"));
+  main.append($("<br>"));
+  main.append($("<br>"));
 
-  main.append($("<p>").html("For our first example, let's say that we want to \
-    make 5 destination plates, and we will leave any set of colonies less than 96 on the source plate."));
+
+  main.append($("<h2>").text("One to one & One to many (with chunking)"));
+  main.append($("<p>").html("Now let's take the case where we have reasonably dense " +
+    "sources, and we want to create a set number of destination plates with as few gaps as we reasonably can. " +
+    "The picking routine will be configured such that it will harvest colonies in 'chunks' of 96 at a time, leaving any remaining colonies on the source. " +
+    "There will be a certain amount of slack in this. In this example, the last plate harvested from a source can be missing up to 8 wells. "));
+
   main.append(
     makeDiagram([makeSource("4 colonies left behind", "100"),
       makeArrow(),
@@ -174,38 +165,22 @@ $(document).ready(function(){
       makeTightDestination("1st", [96], 1),
       makeTightDestination("2nd", [96], 1)]));
   main.append(
-    makeDiagram([makeSource("95 colonies left behind!", "191"),
-      makeArrow(),
-      makeTightDestination("1st", [96], 2)]));
-  main.append(
-    makeDiagram([makeSource("4 colonies left behind", "100"),
-      makeArrow(),
-      makeTightDestination("1st", [96], 3)]));
-
-  main.append($("<p>").html("During the conversation Friday, Lee proposed having \
-    a certain amount of slack in this. For example, we may leave up to 8 empty wells on a plate."));
-  main.append(
-    makeDiagram([makeSource("4 colonies left behind", "100"),
-      makeArrow(),
-      makeTightDestination("1st", [96], 0)]));
-  main.append(
-    makeDiagram([makeSource("8 colonies left behind", "200"),
-      makeArrow(),
-      makeTightDestination("1st", [96], 1),
-      makeTightDestination("2nd", [96], 1)]));
-  main.append(
-    makeDiagram([makeSource("0 colonies left behind.", "191"),
+    makeDiagram([makeSource("0 colonies left behind.", "184"),
       makeArrow(),
       makeTightDestination("1st", [96], 2),
-      makeTightDestination("2nd", [95], 2)]));
+      makeTightDestination("2nd", [88], 2)]));
+  main.append($("<p>").html("One of the constraints with this type of workflow " +
+      " is that we would have to have a maximum number of destination plates per source plate. " +
+      "This can be configured, but the more possible destination plates per-source, the longer the SAMI method becomes"));
+  main.append($("<br>"));
 
   main.append($("<h2>").text("One to many with 2nd pass consolidation"));
-  main.append($("<p>").html("Finally, we have the case where we have a known number of source plates and want to harvest \
-    as many colonies as possible with complete disregard for any gaps left on \
-    destination plates. Later we run a 2nd method to consolidate these wells using the Biomek. \
-    This will result in some wasted plates, and may take some extra time. \
-    Again, one of the constraints that we would have to impose is to have a maximum number of destination plates per source plate. \
-    For example:"));
+  main.append($("<p>").html("Finally, we have the case where we have a known number of source plates and want to harvest "+
+    "as many colonies as possible with complete disregard for any gaps left on "+
+    "destination plates. Later, we run a 2nd method to consolidate these wells using the Biomek. "+
+    "This will result in some wasted plates, and may take some extra time. "+
+    "Again, one of the constraints that we would have to impose is to have a maximum number of destination plates per source plate. "+
+    "For example:"));
 
   main.append(
     makeDiagram([makeSource("", "100"),
